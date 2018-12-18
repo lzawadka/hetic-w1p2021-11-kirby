@@ -4,11 +4,10 @@ body {
   transform: rotate 0.5;
 }
 .character {
-  background: pink;
   height: 100px;
   width: 100px;
   position: fixed;
-  bottom: 10%;
+  bottom: 15%;
   left: 30%;
 }
 .floor {
@@ -21,6 +20,12 @@ body {
 .portal {
   background: blue;
   height: 100px;
-  width: 100px;
-  
+  width: 100px;  
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  bottom: 0;
 }
