@@ -62,7 +62,7 @@ function game() {
     oxo.animation.move(character, directionDown, gravity, true);
   }
 
-/* move of the character */
+/* ground collision test */
 oxo.elements.onCollisionWithElement(character, ground, function() {
   oxo.elements.setPosition(character, {x: 10, y: 0});
 });
