@@ -1,14 +1,7 @@
-body {
-  width: 100vw;
-  height: 100vh;
-  transform: rotate 0.5;
-}
-
 /* HOME */
 body {
   width: 100vw;
   height: 100vh;
-  transform: rotate 0.5;
   background: pink;
 }
 
@@ -58,41 +51,48 @@ p {
 
 
 /* GAME */
-.character {
+.container__character {
   height: 100px;
   width: 100px;
+  transition: 0.2s;
 }
-.floor {
-  background: black;
-  height: 10%;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+
+.ground__pink {
+  width: 100vw;
+  height: 100vh;
+  text-align:center;
+  background: url('/img/pink-ground\(1280)\.png');
+  background-size: 160vh;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
+  position:fixed;
 }
+
 .portal {
   background: #2f9130;
   height: 100px;
   width: 100vw;  
 }
 
-.container img:nth-of-type(1){
-  position:absolute;
-  width:20vw;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 
 .container {
 width: 100vw;
 height: 100vh;
 text-align:center;
-background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-442013.png) repeat;
+background: url('/img/Kirby_background-1280.png');
 background-size: 160vh;
 -webkit-animation: backgroundScroll 9999999s linear infinite;
-animation: backgroundScroll 99999s linear infinite; /* Adjust timing here according to speed required */
-  position:fixed;
+animation: backgroundScroll 999999s linear infinite; /* Adjust timing here according to speed required */
+position:fixed;
+
+  &img:nth-of-type(1){
+    position:absolute;
+    width:20vw;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }  
 }
 
 @-webkit-keyframes backgroundScroll {
@@ -106,4 +106,3 @@ to {background-position: -99999999px 0;}
 }
 
 /* flip screen */
-
