@@ -61,9 +61,6 @@ p {
 .character {
   height: 100px;
   width: 100px;
-  position: fixed;
-  bottom: 15%;
-  left: 30%;
 }
 .floor {
   background: black;
@@ -73,14 +70,40 @@ p {
   bottom: 0;
 }
 .portal {
-  background: blue;
+  background: #2f9130;
   height: 100px;
-  width: 100px;  
+  width: 100vw;  
 }
 
-img {
-  height: 300px;
-  width: 300px;
-  position: fixed;
-  bottom: 0;
+.container img:nth-of-type(1){
+  position:absolute;
+  width:20vw;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
+
+.container {
+width: 100vw;
+height: 100vh;
+text-align:center;
+background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-442013.png) repeat;
+background-size: 160vh;
+-webkit-animation: backgroundScroll 9999999s linear infinite;
+animation: backgroundScroll 99999s linear infinite; /* Adjust timing here according to speed required */
+  position:fixed;
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -99999999px 0;}
+}
+
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -99999999px 0;}
+}
+
+/* flip screen */
+

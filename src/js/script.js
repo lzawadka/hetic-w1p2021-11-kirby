@@ -4,44 +4,63 @@ var floor;
 var speed = 100;
 var portalPosition;
 var size = 300;
-var portal;
-var opposites = {
-  // Usefull to calculate an impossible turn
-  left: 'right',
-  up: 'down',
-  right: 'left',
-  down: 'up',
-};
-var portalPosition;
+var gravity = 1;  //Speed of falling
+var time;
+var flying = true;
+var chutInterval;
+var directionDown = 'down';
 
 
 /* CLIC PASSAGE AU JEU */
-oxo.inputs.listenKey('enter', function() {
+oxo.inputs.listenKeyOnce('enter', function() {
   if (oxo.screens.getCurrentScreen !== 'game') {
-    oxo.screens.loadScreen('game');
+    oxo.screens.loadScreen('game', game);
   }
 });
 /* CLIC PASSAGE AU JEU */
 
 /* Move of obstacle */
 
-
-portal = document.getElementById('portal');
-oxo.animation.move(portal, 'right', speed * (1));
-portalPosition = oxo.animation.getPosition(portal);
-
-oxo.inputs.listenArrowKeys(function(key) {
-
-  if (key !== opposites[direction]) {
-    nextDirection = key;
-  }
-});
-
-direction = nextDirection = 'right';
-  oxo.animation.move(portal, direction, size, true); 
-  portalPosition = oxo.animation.getPosition(portal);
 /* Move of obstacle */
 
 /* move of the character */
 
+function game() {
+  chutInterval = setInterval(player, 1)
+
+  var portal = document.getElementById('portal');   //platform object
+  oxo.animation.setPosition(portal, {x: 0, y: 550});
+
+  var character = document.getElementById('character');     //player object
+  oxo.animation.setPosition(character, {x: 100, y: 550});
+
+
+  
+
+  //time = setInterval(down, gravity); 
+
+    if ( flying === true) {
+      oxo.animation.move(character, 'down', 10);
+    };
+
+    oxo.inputs.listenArrowKeys(function(key) {
+      if ( key === 'down' ) {
+        oxo.animation.move(character, 'down', 50);
+      } else if (key === 'up') {
+        oxo.animation.move(character, 'up', 200);
+        setTimeout(() => {
+          flying = true;
+        }, 300);
+      }
+    });
+
+  };
+
+  function player() {
+    oxo.animation.move(character, directionDown, gravity, true);
+  }
+
 /* move of the character */
+
+/* flip screen */
+
