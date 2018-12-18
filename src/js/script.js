@@ -14,7 +14,6 @@ var opposites = {
 };
 var portalPosition;
 
-
 /* CLIC PASSAGE AU JEU */
 oxo.inputs.listenKey('enter', function() {
   if (oxo.screens.getCurrentScreen !== 'game') {
@@ -40,8 +39,10 @@ oxo.inputs.listenArrowKeys(function(key) {
 direction = nextDirection = 'right';
   oxo.animation.move(portal, direction, size, true); 
   portalPosition = oxo.animation.getPosition(portal);
-/* Move of obstacle */
+
+  /* Move of obstacle */
 
 /* move of the character */
 
 /* move of the character */
+
