@@ -9,12 +9,14 @@ var time;
 var flying = true;
 var chutInterval;
 var directionDown = 'down';
-
+var character = document.getElementById('character');
+var ennemy = document.getElementById('game__obstacle');
+var ground = document.getElementById('portal');
 
 /* CLIC PASSAGE AU JEU */
 oxo.inputs.listenKeyOnce('enter', function() {
   if (oxo.screens.getCurrentScreen !== 'game') {
-    oxo.screens.loadScreen('game', game);
+      oxo.screens.loadScreen('game', game);
   }
 });
 /* CLIC PASSAGE AU JEU */
@@ -61,6 +63,14 @@ function game() {
   }
 
 /* move of the character */
+oxo.elements.onCollisionWithElement(character, ground, function() {
+  oxo.elements.setPosition(character, {x: 10, y: 0});
+});
 
 /* flip screen */
 
+/* death */ 
+oxo.elements.onCollisionWithElement(character, ennemy, function() {
+  oxo.screens.loadScreen('end', function() {
+  });
+});
