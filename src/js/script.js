@@ -11,7 +11,7 @@ var chutInterval;
 var directionDown = 'down';
 var character;
 var ground;
-var obstacleInterval;
+var objInterval;
 
 /* CLIC PASSAGE AU JEU */
 oxo.inputs.listenKeyOnce('enter', function() {
@@ -20,25 +20,22 @@ oxo.inputs.listenKeyOnce('enter', function() {
     console.log(true);
   }
 });
+
 /* CLIC PASSAGE AU JEU */
 
 /* move of the character */
 
 function game() {
   chutInterval = setInterval(player, 1)
+  /*objInterval = setInterval(obstacleEl, 1)*/
 
-  //var portal = document.getElementById('portal'); 
-  //oxo.animation.setPosition(portal, {x: 0, y: 550});
 
   character = document.getElementById('container__character');    
-  oxo.animation.setPosition(character, {x: 100, y: 550});
-  //obstacleInterval = setInterval(obstacle, speed * 10);
-  obstacle();
+  oxo.animation.setPosition(character, {x: 100, y: 100});
+  floor();
   ground = document.getElementsByClassName('floor');
   
-  
-
-  //time = setInterval(down, gravity); 
+  /*setTimeout(obstacle, 1000);*/
 
     if ( flying === true) {
       oxo.animation.move(container__character, 'down', 10);
@@ -48,7 +45,7 @@ function game() {
       if ( key === 'down' ) {
         oxo.animation.move(container__character, 'down', 50);
       } else if (key === 'up') {
-        oxo.animation.move(container__character, 'up', 600);
+        oxo.animation.move(container__character, 'up', 505);
         setTimeout(() => {
           flying = true;
         }, 300);
@@ -56,20 +53,53 @@ function game() {
     });
   };
 
-  function player() {
-    oxo.animation.move(container__character, directionDown, gravity, true);
-  }
+  
 
+function player() {
+  oxo.animation.move(container__character, directionDown, gravity, true);
+}
+/*function obstacleMove() {
+  oxo.animation.move(obstacleEl, 'left', gravity, true);
+}*/
 
-function obstacle() {
-    var bonus = oxo.elements.createElement({
+function floor() {
+    var floor = oxo.elements.createElement({
       obstacle: true,
       class: 'floor',
       styles: {
         transform:
           'translate(100px, 700px)',
       },
-    });
+    });     
+ }
+
+
+// elements
+
+ /*function obstacle() {
+  var obstacleEl = oxo.elements.createElement({
+    class: "obstacle1",
+    obstacle: true
+  });
+
+  var interval = setInterval(function() {
+    oxo.animation.move(obstacleEl, 'left', size, true);
+  }, 10);
+
+  oxo.elements.onLeaveScreenOnce(
+    obstacleEl,
+    function() {
+      obstacleEl.remove();
+      clearInterval(interval);
+      console.log("left");
+    },
+    true
+  );
+
+  setTimeout(obstacle, 1000 * oxo.utils.getRandomNumber(1, 5));
+}*/
+ 
+
 
     /*setInterval(function() {
     console.log(bonus);
@@ -82,8 +112,7 @@ function obstacle() {
   //oxo.elements.onCollisionWithElementOnce(character, portal, function() {
     //oxo.player.addToScore(1);
   //});
-  }
-
+  
 
 
 // COLLISION

@@ -68,12 +68,13 @@ p {
   position:fixed;
 }
 
-.portal {
-  background: #2f9130;
-  height: 100px;
-  width: 100vw;  
+.obstacle1 {
+  color: blue;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  overflow: hidden;
 }
-
 
 .container {
 width: 100vw;
