@@ -12,6 +12,7 @@ var directionDown = 'down';
 var character;
 var ground;
 var objInterval;
+var obstacle1;
 
 /* CLIC PASSAGE AU JEU */
 oxo.inputs.listenKeyOnce('enter', function() {
@@ -27,15 +28,16 @@ oxo.inputs.listenKeyOnce('enter', function() {
 
 function game() {
   chutInterval = setInterval(player, 1)
-  /*objInterval = setInterval(obstacleEl, 1)*/
+  //objInterval = setInterval(obstacleEl, 1)
 
 
   character = document.getElementById('container__character');    
-  oxo.animation.setPosition(character, {x: 100, y: 100});
+  oxo.animation.setPosition(character, {x: 100, y: 600});
   floor();
   ground = document.getElementsByClassName('floor');
+  obstacle1();
+  ground = document.getElementsByClassName('obstacle1');
   
-  /*setTimeout(obstacle, 1000);*/
 
     if ( flying === true) {
       oxo.animation.move(container__character, 'down', 10);
@@ -45,7 +47,7 @@ function game() {
       if ( key === 'down' ) {
         oxo.animation.move(container__character, 'down', 50);
       } else if (key === 'up') {
-        oxo.animation.move(container__character, 'up', 505);
+        oxo.animation.move(container__character, 'up', 600);
         setTimeout(() => {
           flying = true;
         }, 300);
@@ -58,9 +60,7 @@ function game() {
 function player() {
   oxo.animation.move(container__character, directionDown, gravity, true);
 }
-/*function obstacleMove() {
-  oxo.animation.move(obstacleEl, 'left', gravity, true);
-}*/
+
 
 function floor() {
     var floor = oxo.elements.createElement({
@@ -68,15 +68,43 @@ function floor() {
       class: 'floor',
       styles: {
         transform:
-          'translate(100px, 700px)',
+          'translate(100px, 720px)',
       },
     });     
  }
 
+ setInterval(function() {
+  console.log(obstacle1);
 
-// elements
+    oxo.animation.move(obstacle1, 'left', 10, true);
+  }, 1000);
 
- /*function obstacle() {
+ function obstacle1() {
+   obstacle1 = oxo.elements.createElement({
+    obstacle: true,
+    class: 'obstacle1',
+    styles: {
+      transform:
+        'translate(200px, 500px)',
+    },
+  });     
+}
+
+/* character moves */
+
+
+// elements obj
+
+
+/*setTimeout(obstacle, 1000);
+
+
+function obstacleMove() {
+  oxo.animation.move(obstacleEl, 'left', gravity, true);
+}
+
+
+ function obstacle() {
   var obstacleEl = oxo.elements.createElement({
     class: "obstacle1",
     obstacle: true
@@ -97,8 +125,31 @@ function floor() {
   );
 
   setTimeout(obstacle, 1000 * oxo.utils.getRandomNumber(1, 5));
-}*/
- 
+} */
+
+// elements obj
+
+
+// flip 
+
+/*var kirby = document.getElementById('container__character');
+var background = document.getElementById('background');
+
+
+kirby.addEventListener('click', function(){
+  background.classList.toggle('background__state--second')
+  kirby.classList.toggle('flip__state--second')
+});
+
+background.addEventListener('click', function(){
+  background.classList.toggle('background__state--second');
+  kirby.classList.toggle('flip__state--second')
+
+  console.log(false);
+});*/
+
+// flip
+
 
 
     /*setInterval(function() {
