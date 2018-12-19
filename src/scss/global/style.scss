@@ -69,7 +69,7 @@ p {
 }
 
 .obstacle1 {
-  background-image: url(/img/pink-crystal_1.png);
+  background-image: url(/img/pink-crystal_1.png) ;
   background-size: contain;
   width: 100px;
   height: 100px;
@@ -77,14 +77,17 @@ p {
   bottom: 12.5%;
   right: -10px;
 }
+
 .obstacle2 {
-  background-color: blue;
+  background-image: url(/img/pink-rock_3.png);
+  background-size: contain;
   width: 100px;
   height: 100px;
   position: fixed;
-  bottom: 13%;
+  bottom: 12%;
   right: -1000px;
 }
+
 .obstacle3 {
   background-image: url(/img/pink-portal.gif);
   background-size: contain;
@@ -92,7 +95,27 @@ p {
   height: 300px;
   position: fixed;
   bottom: 13%;
-  right: -2000px;
+  right: -6000px;
+}
+
+.obstacle4 {
+  background-image: url(/img/pink-rock_3.png);
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 13%;
+  right: -2200px;
+}
+
+.obstacle5 {
+  background-image: url(/img/pink-crystal_1.png);
+  background-size: contain;
+  width: 100px;
+  height: 90px;
+  position: fixed;
+  bottom: 13%;
+  right: -1600px;
 }
 
 .container {

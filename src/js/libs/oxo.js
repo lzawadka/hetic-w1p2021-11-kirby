@@ -51,9 +51,12 @@ window.oxo = {
 
         if (
           !oxo.elements.obstacles.every(function(obstacle) {
-            return element == obstacle || !oxo.elements.elementsAreColliding(
-              obstacle.getBoundingClientRect(),
-              elFuturePos
+            return (
+              obstacle == element ||
+              !oxo.elements.elementsAreColliding(
+                obstacle.getBoundingClientRect(),
+                elFuturePos
+              )
             );
           })
         ) {
