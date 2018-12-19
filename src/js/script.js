@@ -15,6 +15,10 @@ var character;
 var ground;
 var objInterval;
 var charPosY = 600;
+var theme;
+var audiojump;
+var audioportal;
+var audiodeath;
 
 /* CLIC PASSAGE AU JEU */
 oxo.inputs.listenKeyOnce('enter', function() {
@@ -31,6 +35,11 @@ oxo.inputs.listenKeyOnce('enter', function() {
 
 //Appel des fonctions
 function game() {
+  theme = document.getElementById('audio__theme');
+  theme.volume = 0.1;
+  audiojump = document.getElementById('audio__jump');
+  audioportal = document.getElementById('audio__portal')
+  audioportal.volume = 0.3;
   chutInterval = setInterval(player, 8);
   character = document.getElementById('container__character');    
   oxo.animation.setPosition(character, {x: 100, y: 600});
@@ -54,7 +63,7 @@ function game() {
       if ( key === 'down' ) {
         oxo.animation.move(container__character, 'down', 50);
       } else if (key === 'up' && !flying) {
-        
+        audiojump.play();
         oxo.animation.move(container__character, 'up', 600);
           charPosY -= 800;
           flying = true;
@@ -148,6 +157,7 @@ function floor() {
   
   oxo.elements.onCollisionWithElement(character, obstacle2, function() {
     oxo.screens.loadScreen('end', function() {
+      audiodeath.play();
     });
   });
   
@@ -162,8 +172,9 @@ function obstacle3() {
 
  
  oxo.elements.onCollisionWithElement(character, obstacle3, function() {
-   oxo.screens.loadScreen('end', function() {
-   });
+  audioportal.play();
+  // oxo.screens.loadScreen('end', function() {
+  //  });
  });
  
 }
