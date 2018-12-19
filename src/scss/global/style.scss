@@ -1,12 +1,12 @@
 /* HOME */
-body {
+.home {
   width: 100vw;
   height: 100vh;
   background: pink;
 }
 
 h1 {
-  margin-top: 200px;
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   font-family: "Kirby", "Comic Sans MS", Arial, Helvetica, sans-serif;
@@ -32,7 +32,7 @@ p {
 }
 
 .gameplay {
-  margin: 10px auto;
+  margin: 10px 300px;
   padding: 10px;
   display: flex;
   justify-content: space-around;
@@ -54,7 +54,7 @@ p {
 .container__character {
   height: 100px;
   width: 100px;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .ground__pink {
@@ -69,22 +69,22 @@ p {
 }
 
 .obstacle1 {
-  color: blue;
+  background-color: blue;
   width: 300px;
   height: 300px;
-  z-index: 3;
 }
 
 .container {
 width: 100vw;
 height: 100vh;
 text-align:center;
-background: url('/img/Kirby_background-1280.png');
+background: url('/img/Kirby_background-1280-CLOUD.png');
 background-size: 160vh;
+background-color: #ffadec;
 -webkit-animation: backgroundScroll 9999999s linear infinite;
 animation: backgroundScroll 999999s linear infinite; /* Adjust timing here according to speed required */
 position: absolute;
-z-index: 3;
+z-index: -1;
 
   &img:nth-of-type(1){
     position:absolute;

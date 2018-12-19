@@ -1,3 +1,5 @@
+
+
 var direction;
 var nextDirection;
 var floor;
@@ -27,29 +29,28 @@ oxo.inputs.listenKeyOnce('enter', function() {
 /* move of the character */
 
 function game() {
-  chutInterval = setInterval(player, 1)
-  //objInterval = setInterval(obstacleEl, 1)
-
-
+  chutInterval = setInterval(player, 8);
   character = document.getElementById('container__character');    
   oxo.animation.setPosition(character, {x: 100, y: 600});
   floor();
   ground = document.getElementsByClassName('floor');
   obstacle1();
-  ground = document.getElementsByClassName('obstacle1');
+  ground2 = document.getElementsByClassName('obstacle1');
   
 
     if ( flying === true) {
-      oxo.animation.move(container__character, 'down', 10);
+      oxo.animation.move(container__character, 'down', 5);
     };
 
     oxo.inputs.listenArrowKeys(function(key) {
       if ( key === 'down' ) {
         oxo.animation.move(container__character, 'down', 50);
-      } else if (key === 'up') {
-        oxo.animation.move(container__character, 'up', 600);
+      } else if (key === 'up' && oxo.animation.getPosition(character).y >= 600) {
+        
+        oxo.animation.move(container__character, 'up', 400);
         setTimeout(() => {
           flying = true;
+
         }, 300);
       }
     });
@@ -68,16 +69,16 @@ function floor() {
       class: 'floor',
       styles: {
         transform:
-          'translate(100px, 720px)',
+          'translate(100px, 705px)',
       },
     });     
  }
 
- setInterval(function() {
+ /*setInterval(function() {
   console.log(obstacle1);
 
-    oxo.animation.move(obstacle1, 'left', 10, true);
-  }, 1000);
+    oxo.animation.move(obstacle1, 'left', 100, true);
+  });*/
 
  function obstacle1() {
    obstacle1 = oxo.elements.createElement({
@@ -85,10 +86,12 @@ function floor() {
     class: 'obstacle1',
     styles: {
       transform:
-        'translate(200px, 500px)',
+        'translate(200px, 300px)',
     },
   });     
 }
+
+
 
 /* character moves */
 
