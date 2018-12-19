@@ -5,6 +5,16 @@
   background: pink;
 }
 
+.home__picture {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.home__beware {
+  font-weight: inherit;
+}
+
 h1 {
   margin-top: 150px;
   display: flex;
@@ -31,6 +41,10 @@ p {
   text-align: center;
 }
 
+.gameplay__title {
+  margin-top: 30px;
+}
+
 .gameplay {
   margin: 10px 300px;
   padding: 10px;
@@ -44,11 +58,10 @@ p {
 
 .gameplay__instructions {
   border: 2px solid white;
-  padding: 10px;
-  padding-bottom: 200px;
+  padding: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
 }
-
-
 
 /* GAME */
 .container__character {
@@ -56,6 +69,31 @@ p {
   width: 100px;
   transition: 0.5s;
 }
+.ground__dark {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: url(/img/Dark_background-1280-simple.jpg);
+  background-size: cover;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
+  position:fixed;
+  z-index: -9;
+  display: none;
+}
+
+.ground__dark--is-collided {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: url(/img/dark-ground.png);
+  background-size: cover;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
+  position:fixed;
+  z-index: 9;
+}
+
 
 .ground__pink {
   width: 100vw;
@@ -71,51 +109,98 @@ p {
 .obstacle1 {
   background-image: url(/img/pink-crystal_1.png) ;
   background-size: contain;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   position: fixed;
-  bottom: 12.5%;
+  bottom: 10%;
   right: -10px;
 }
 
 .obstacle2 {
   background-image: url(/img/pink-rock_3.png);
   background-size: contain;
-  width: 100px;
-  height: 100px;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
   position: fixed;
-  bottom: 12%;
+  bottom: 6%;
   right: -1000px;
 }
 
 .obstacle3 {
   background-image: url(/img/pink-portal.gif);
   background-size: contain;
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   position: fixed;
   bottom: 13%;
-  right: -6000px;
+  right: -8200px;
 }
 
 .obstacle4 {
-  background-image: url(/img/pink-rock_3.png);
+  background-image: url(/img/pink-cactus_3.png);
   background-size: contain;
-  width: 100px;
-  height: 100px;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
   position: fixed;
-  bottom: 13%;
-  right: -2200px;
+  bottom: 10%;
+  right: -2000px;
 }
 
 .obstacle5 {
-  background-image: url(/img/pink-crystal_1.png);
+  background-image: url(/img/pink-rock_2.png);
   background-size: contain;
-  width: 100px;
-  height: 90px;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
   position: fixed;
-  bottom: 13%;
-  right: -1600px;
+  bottom: 8%;
+  right: -2800px;
+}
+
+.obstacle6 {
+  background-image: url(/img/pink-crystal_4.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 10%;
+  right: -3800px;
+}
+
+.obstacle7 {
+  background-image: url(/img/pink-rock_1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -4800px;
+}
+
+.obstacle8 {
+  background-image: url(/img/pink-cactus_3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 12%;
+  right: -5800px;
+}
+
+.obstacle9 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -6800px;
 }
 
 .container {
@@ -173,3 +258,6 @@ to {background-position: -99999999px 0;}
   height: 100vh;
   overflow: hidden;
 }
+
+
+// flip screen
