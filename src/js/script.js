@@ -14,7 +14,7 @@ var directionDown = 'down';
 var character;
 var ground;
 var objInterval;
-var obstacle1;
+var charPosY = 600;
 
 /* CLIC PASSAGE AU JEU */
 oxo.inputs.listenKeyOnce('enter', function() {
@@ -28,6 +28,8 @@ oxo.inputs.listenKeyOnce('enter', function() {
 
 /* move of the character */
 
+
+//Appel des fonctions
 function game() {
   chutInterval = setInterval(player, 8);
   character = document.getElementById('container__character');    
@@ -36,33 +38,77 @@ function game() {
   ground = document.getElementsByClassName('floor');
   obstacle1();
   ground2 = document.getElementsByClassName('obstacle1');
+  obstacle2();
+  ground3 = document.getElementsByClassName('obstacle2');
+  obstacle3();
+  ground4 = document.getElementsByClassName('obstacle3');
   
-
+/* move of the character */
     if ( flying === true) {
-      oxo.animation.move(container__character, 'down', 5);
+      oxo.animation.move(container__character, 'down', 1);
     };
 
     oxo.inputs.listenArrowKeys(function(key) {
+      console.log(flying);
+      console.log(`So6: ${oxo.animation.getPosition(character).y >= 601}`);
       if ( key === 'down' ) {
         oxo.animation.move(container__character, 'down', 50);
-      } else if (key === 'up' && oxo.animation.getPosition(character).y >= 600) {
+      } else if (key === 'up' && !flying) {
         
-        oxo.animation.move(container__character, 'up', 400);
-        setTimeout(() => {
+        oxo.animation.move(container__character, 'up', 600);
+          charPosY -= 800;
           flying = true;
-
-        }, 300);
       }
     });
-  };
+
+    setInterval(
+      function() {
+        var obstacles2 = document.querySelector('.obstacle2');
+    
+        oxo.animation.move(obstacles2, 'left', 10, true);
+      }, 
+      20
+    );
+
+    //Fonction obstacle
+    setInterval(
+      function() {
+        var obstacles = document.querySelector('.obstacle1');
+
+        oxo.animation.move(obstacles, 'left', 10, true);
+      }, 
+      20
+      
+    );
+
+    setInterval(
+      function() {
+        var obstacles3 = document.querySelector('.obstacle3');
+
+        oxo.animation.move(obstacles3, 'left', 10, true);
+      }, 
+      20
+      
+    );
+      };
 
   
-
+//Fonction gravité character
 function player() {
+  if(charPosY <= 600){
+    charPosY += gravity;
+  }
   oxo.animation.move(container__character, directionDown, gravity, true);
+  if(flying){
+    //console.log(oxo.animation.getPosition(character));
+    //console.log(oxo.animation.getPosition(character).y >= 601);
+    if(charPosY >= 600){
+      flying = false;
+    }
+  }
 }
 
-
+//Fonction floor
 function floor() {
     var floor = oxo.elements.createElement({
       obstacle: true,
@@ -74,24 +120,62 @@ function floor() {
     });     
  }
 
- /*setInterval(function() {
-  console.log(obstacle1);
-
-    oxo.animation.move(obstacle1, 'left', 100, true);
-  });*/
+ 
 
  function obstacle1() {
-   obstacle1 = oxo.elements.createElement({
+   var obstacle1 = oxo.elements.createElement({
     obstacle: true,
     class: 'obstacle1',
-    styles: {
-      transform:
-        'translate(200px, 300px)',
-    },
+    
   });     
+
+  oxo.elements.onCollisionWithElement(character, obstacle1, function() {
+    oxo.screens.loadScreen('end', function() {
+    });
+  });
+  //oxo.animation.setPosition(obstacle1, {x: 200, y: 500});
 }
 
 
+
+ function obstacle2() {
+   var obstacle2 = oxo.elements.createElement({
+    obstacle: true,
+    class: 'obstacle2',   
+  });     
+  //oxo.animation.setPosition(obstacle1, {x: 200, y: 500});
+
+  
+  oxo.elements.onCollisionWithElement(character, obstacle2, function() {
+    oxo.screens.loadScreen('end', function() {
+    });
+  });
+  
+}
+
+function obstacle3() {
+  var obstacle3 = oxo.elements.createElement({
+   obstacle: true,
+   class: 'obstacle3',   
+ });     
+ //oxo.animation.setPosition(obstacle1, {x: 200, y: 500});
+
+ 
+ oxo.elements.onCollisionWithElement(character, obstacle3, function() {
+   oxo.screens.loadScreen('end', function() {
+   });
+ });
+ 
+}
+
+
+
+// death //
+// creer variable ennemy pour les obstacles//
+/*oxo.elements.onCollisionWithElement(character, obstacle1, function() {
+  oxo.screens.loadScreen('end', function() {
+  });
+});*/
 
 /* character moves */
 

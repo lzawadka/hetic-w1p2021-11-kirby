@@ -54,14 +54,14 @@ p {
 .container__character {
   height: 100px;
   width: 100px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .ground__pink {
   width: 100vw;
   height: 100vh;
   text-align:center;
-  background: url('/img/pink-ground\(1280)\.png');
+  background: url('/img/pink-ground\(1280\)\ \(1\).png');
   background-size: 160vh;
   -webkit-animation: backgroundScroll 9999999s linear infinite;
   animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
@@ -69,17 +69,38 @@ p {
 }
 
 .obstacle1 {
+  background-image: url(/img/pink-crystal_1.png);
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 12.5%;
+  right: -10px;
+}
+.obstacle2 {
   background-color: blue;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 13%;
+  right: -1000px;
+}
+.obstacle3 {
+  background-image: url(/img/pink-portal.gif);
+  background-size: contain;
   width: 300px;
   height: 300px;
+  position: fixed;
+  bottom: 13%;
+  right: -2000px;
 }
 
 .container {
 width: 100vw;
 height: 100vh;
 text-align:center;
-background: url('/img/Kirby_background-1280-CLOUD.png');
-background-size: 160vh;
+background: url('/img/Kirby_background-1280_TWISTER.png');
+background-size: cover;
 background-color: #ffadec;
 -webkit-animation: backgroundScroll 9999999s linear infinite;
 animation: backgroundScroll 999999s linear infinite; /* Adjust timing here according to speed required */
