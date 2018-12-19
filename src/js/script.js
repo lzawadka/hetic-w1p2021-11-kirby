@@ -66,8 +66,8 @@ oxo.inputs.listenArrowKeys(function(key) {
     oxo.animation.move(container__character, 'down', 100);
   } else if (key === 'up' && !flying) {
     audioJump.play();
-    oxo.animation.move(container__character, 'up', 900, true);
-      charPosY -= 1000;
+    oxo.animation.move(container__character, 'up', 700, true);
+      charPosY -= 900;
       flying = true;
   }
 });
@@ -130,12 +130,12 @@ setInterval(
 //Fonction gravité character
 
 function player() {
-  if(charPosY <= 1000){
+  if(charPosY <= 900){
     charPosY += gravity;
   }
   oxo.animation.move(container__character, directionDown, gravity, true);
   if(flying){
-  if(charPosY >= 1000){
+  if(charPosY >= 900){
       flying = false;
     }
   }
