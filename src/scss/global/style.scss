@@ -221,7 +221,7 @@ p {
   height: 150px;
   position: fixed;
   bottom: 20%;
-  right: -10000px;
+  right: -4000px;
   margin-top: 5%;
   display: inline-block;
 }
@@ -233,7 +233,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 10%;
+  bottom: 16%;
   right: -2000px;
   display: inline-block;
 }
@@ -245,7 +245,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  top: 18%;
+  bottom: 18%;
   right: -2800px;
   display: inline-block;
 }
@@ -257,8 +257,9 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 10%;
+  bottom: 14%;
   right: -3700px;
+  display: inline-block;
 }
 
 .obstacle7 {
@@ -268,8 +269,9 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  bottom: 13%;
   right: -4500px;
+  display: inline-block;
 }
 
 .obstacle8 {
@@ -280,7 +282,8 @@ p {
   height: 150px;
   position: fixed;
   bottom: 12%;
-  right: -5200px;
+  right: -4200px;
+  display: inline-block;
 }
 
 .obstacle9 {
@@ -290,63 +293,65 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  bottom: 13%;
   right: -5900px;
+  display: inline-block;
 }
 
 .obstacle10 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url(/img/bat.gif);
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
-  right: -6700px;
+  top: 24%;
+  right: -6200px;
+  display: inline-block;
 }
 
 .obstacle11 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url('/img/dark-dragon.gif');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
-  right: -8800px;
+  top: 24%;
+  right: -6700px;
 }
 
 .obstacle12 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url('/img/dark-spike_2.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -9800px;
 }
 
 .obstacle13 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url('/img/dark-rock_1.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -10800px;
 }
 
 .obstacle14 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url('/img/bat.gif');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
-  right: -11800px;
+  top: 20%;
+  right: -10100px;
 }
 
 .obstacle15 {
@@ -356,7 +361,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -12800px;
 }
 
@@ -367,7 +372,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -13800px;
 }
 
@@ -378,7 +383,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -14800px;
 }
 
@@ -389,7 +394,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -15800px;
 }
 
@@ -400,7 +405,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -16800px;
 }
 
@@ -411,7 +416,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -17800px;
 }
 
@@ -422,7 +427,7 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 8%;
   right: -18800px;
 }
 

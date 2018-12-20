@@ -261,7 +261,7 @@ setInterval(
   function() {
     obstacles3 = document.querySelector('.obstacle3');
 
-    oxo.animation.move(obstacles3, 'left', 25, true);
+    oxo.animation.move(obstacles3, 'left', 20, true);
   }, 
   20 
 );
@@ -283,7 +283,7 @@ setInterval(
   function() {
     var obstacles5 = document.querySelector('.obstacle5');
 
-    oxo.animation.move(obstacles5, 'left', 10, true);
+    oxo.animation.move(obstacles5, 'left', 25, true);
   }, 
   20 
 );
@@ -294,7 +294,7 @@ setInterval(
   function() {
     var obstacles6 = document.querySelector('.obstacle6');
 
-    oxo.animation.move(obstacles6, 'left', 10, true);
+    oxo.animation.move(obstacles6, 'left', 25, true);
   }, 
   20 
 );
@@ -305,7 +305,7 @@ setInterval(
   function() {
     var obstacles7 = document.querySelector('.obstacle7');
 
-    oxo.animation.move(obstacles7, 'left', 10, true);
+    oxo.animation.move(obstacles7, 'left', 25, true);
   }, 
   20 
 );
@@ -316,7 +316,7 @@ setInterval(
   function() {
     var obstacles8 = document.querySelector('.obstacle8');
 
-    oxo.animation.move(obstacles8, 'left', 10, true);
+    oxo.animation.move(obstacles8, 'left', 25, true);
   }, 
   20 
 );
@@ -327,7 +327,7 @@ setInterval(
   function() {
     var obstacles9 = document.querySelector('.obstacle9');
 
-    oxo.animation.move(obstacles9, 'left', 10, true);
+    oxo.animation.move(obstacles9, 'left', 25, true);
   }, 
   20 
 );
@@ -338,7 +338,7 @@ setInterval(
   function() {
     var obstacles10 = document.querySelector('.obstacle10');
 
-    oxo.animation.move(obstacles10, 'left', 10, true);
+    oxo.animation.move(obstacles10, 'left', 25, true);
   }, 
   20 
 );
@@ -349,7 +349,7 @@ setInterval(
   function() {
     var obstacles11 = document.querySelector('.obstacle11');
 
-    oxo.animation.move(obstacles11, 'left', 10, true);
+    oxo.animation.move(obstacles11, 'left', 25, true);
   }, 
   20 
 );
@@ -360,7 +360,7 @@ setInterval(
   function() {
     var obstacles12 = document.querySelector('.obstacle12');
 
-    oxo.animation.move(obstacles12, 'left', 10, true);
+    oxo.animation.move(obstacles12, 'left', 25, true);
   }, 
   20 
 );
@@ -371,7 +371,7 @@ setInterval(
   function() {
     var obstacles13 = document.querySelector('.obstacle13');
 
-    oxo.animation.move(obstacles13, 'left', 10, true);
+    oxo.animation.move(obstacles13, 'left', 25, true);
   }, 
   20 
 );
@@ -382,7 +382,7 @@ setInterval(
   function() {
     var obstacles14 = document.querySelector('.obstacle14');
 
-    oxo.animation.move(obstacles14, 'left', 10, true);
+    oxo.animation.move(obstacles14, 'left', 25, true);
   }, 
   20 
 );
@@ -648,7 +648,7 @@ function darkFloor () {
   function getObstacle3() {
     obstacle3 = oxo.elements.createElement({
       obstacle: true,
-      class: 'obstacle3 pute',   
+      class: 'obstacle3',   
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle3, function() {
