@@ -5,7 +5,7 @@ var floor;
 var speed = 100;
 var characterPosition;
 var size = 300;
-var gravity = 25;  //Speed of falling
+var gravity = 5;  //Speed of falling
 var time;
 var flying = true;
 var chutInterval;
@@ -91,38 +91,7 @@ function game() {
   ground14 = document.getElementsByClassName('obstacle14');
   obstacle15();
   ground15 = document.getElementsByClassName('obstacle15');
-  obstacle16();
-  ground16 = document.getElementsByClassName('obstacle16');
-  obstacle17();
-  ground17 = document.getElementsByClassName('obstacle17');
-  obstacle18();
-  ground18 = document.getElementsByClassName('obstacle18');
-  obstacle19();
-  ground19 = document.getElementsByClassName('obstacle19');
-  obstacle20();
-  ground20 = document.getElementsByClassName('obstacle20');
-  obstacle21();
-  ground21 = document.getElementsByClassName('obstacle21');
-  obstacle22();
-  ground22 = document.getElementsByClassName('obstacle22');
-  obstacle23();
-  ground23 = document.getElementsByClassName('obstacle23');
-  obstacle24();
-  ground24 = document.getElementsByClassName('obstacle24');
-  obstacle25();
-  ground25 = document.getElementsByClassName('obstacle25');
-  obstacle26();
-  ground26 = document.getElementsByClassName('obstacle26');
-  obstacle27();
-  ground27 = document.getElementsByClassName('obstacle27');
-  obstacle28();
-  ground28 = document.getElementsByClassName('obstacle28');
-  obstacle29();
-  ground29 = document.getElementsByClassName('obstacle29');
-  obstacle30();
-  ground30 = document.getElementsByClassName('obstacle30');
-  obstacle31();
-  ground31 = document.getElementsByClassName('obstacle31');
+
 
   //SCORE
   function score() {
@@ -145,7 +114,7 @@ if ( flying === true) {
 
   oxo.inputs.listenArrowKeys(function(key) {
     if ( key === 'down' ) {
-      oxo.animation.move(container__character, 'down', 50);
+      oxo.animation.move(container__character, 'down', 400);
     } else if ((key === 'up') && (!flying)) {
       console.log(flying);
       audioJump.play();
@@ -238,7 +207,7 @@ oxo.elements.onCollisionWithElement(character, obstacle3, function(){
 
 //Fonction obstacle1 
 
-//obstacleInterval = 
+obstacleInterval = 
 setInterval(
   function() {
     var obstacles = document.querySelector('.obstacle1');
@@ -397,186 +366,12 @@ setInterval(
   function() {
     var obstacles15 = document.querySelector('.obstacle15');
 
-    oxo.animation.move(obstacles15, 'left', 10, true);
+    oxo.animation.move(obstacles15, 'left', 25, true);
   }, 
   20 
 );
 
-//Fonction obstacle16
 
-setInterval(
-  function() {
-    var obstacles16 = document.querySelector('.obstacle16');
-
-    oxo.animation.move(obstacles16, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle17
-
-setInterval(
-  function() {
-    var obstacles17 = document.querySelector('.obstacle17');
-
-    oxo.animation.move(obstacles17, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle18
-
-setInterval(
-  function() {
-    var obstacles18 = document.querySelector('.obstacle18');
-
-    oxo.animation.move(obstacles18, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle19
-
-setInterval(
-  function() {
-    var obstacles19 = document.querySelector('.obstacle19');
-
-    oxo.animation.move(obstacles19, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle20
-
-setInterval(
-  function() {
-    var obstacles20 = document.querySelector('.obstacle20');
-
-    oxo.animation.move(obstacles20, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle21
-
-setInterval(
-  function() {
-    var obstacles21 = document.querySelector('.obstacle21');
-
-    oxo.animation.move(obstacles21, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle22
-
-setInterval(
-  function() {
-    var obstacles22 = document.querySelector('.obstacle22');
-
-    oxo.animation.move(obstacles22, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle23
-
-setInterval(
-  function() {
-    var obstacles23 = document.querySelector('.obstacle23');
-
-    oxo.animation.move(obstacles23, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle24
-
-setInterval(
-  function() {
-    var obstacles24 = document.querySelector('.obstacle24');
-
-    oxo.animation.move(obstacles24, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle25
-
-setInterval(
-  function() {
-    var obstacles25 = document.querySelector('.obstacle25');
-
-    oxo.animation.move(obstacles25, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle26
-
-setInterval(
-  function() {
-    var obstacles26 = document.querySelector('.obstacle26');
-
-    oxo.animation.move(obstacles26, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle27
-
-setInterval(
-  function() {
-    var obstacles27 = document.querySelector('.obstacle27');
-
-    oxo.animation.move(obstacles27, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle28
-
-setInterval(
-  function() {
-    var obstacles28 = document.querySelector('.obstacle28');
-
-    oxo.animation.move(obstacles28, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle29
-
-setInterval(
-  function() {
-    var obstacles29 = document.querySelector('.obstacle29');
-
-    oxo.animation.move(obstacles29, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle30
-
-setInterval(
-  function() {
-    var obstacles30 = document.querySelector('.obstacle30');
-
-    oxo.animation.move(obstacles30, 'left', 10, true);
-  }, 
-  20 
-);
-
-//Fonction obstacle31
-
-setInterval(
-  function() {
-    var obstacles31 = document.querySelector('.obstacle31');
-
-    oxo.animation.move(obstacles31, 'left', 10, true);
-  }, 
-  20 
-);
 
 /*setInterval(
   function() {
@@ -632,7 +427,7 @@ function darkFloor () {
     oxo.elements.onCollisionWithElement(character, obstacle1, function() {
       oxo.screens.loadScreen('end', end);
     });
-    
+
   }
 
 // obstacle2
@@ -803,205 +598,12 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle15, function() {
-      oxo.screens.loadScreen('end', end);
+      oxo.screens.loadScreen('credits', end);
   });
   }
 
-  // obstacle16
-  function obstacle16() {
-    var obstacle16 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle16',   
-  });     
   
-    oxo.elements.onCollisionWithElement(character, obstacle16, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle17
-  function obstacle17() {
-    var obstacle17 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle17',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle17, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle18
-  function obstacle18() {
-    var obstacle18 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle18',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle18, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle19
-  function obstacle19() {
-    var obstacle19 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle19',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle19, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle20
-  function obstacle20() {
-    var obstacle20 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle20',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle20, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle21
-  function obstacle21() {
-    var obstacle21 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle21',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle21, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle22
-  function obstacle22() {
-    var obstacle22 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle22',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle22, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle23
-  function obstacle23() {
-    var obstacle23 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle23',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle23, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle24
-  function obstacle24() {
-    var obstacle24 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle24',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle24, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle25
-  function obstacle25() {
-    var obstacle25 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle25',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle25, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-// obstacle26
-function obstacle26() {
-  var obstacle26 = oxo.elements.createElement({
-    obstacle: true,
-    class: 'obstacle26',   
-});     
-
-  oxo.elements.onCollisionWithElement(character, obstacle26, function() {
-    oxo.screens.loadScreen('end', end);
-  });
-}
-
-  // obstacle27
-  function obstacle27() {
-    var obstacle27 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle27',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle27, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle28
-  function obstacle28() {
-    var obstacle28 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle28',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle28, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle29
-  function obstacle29() {
-    var obstacle29 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle29',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle29, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle30
-  function obstacle30() {
-    var obstacle30 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle30',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle30, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-  // obstacle29
-  function obstacle31() {
-    var obstacle31 = oxo.elements.createElement({
-      obstacle: true,
-      class: 'obstacle31',   
-  });     
-  
-    oxo.elements.onCollisionWithElement(character, obstacle31, function() {
-      oxo.screens.loadScreen('end', end);
-  });
-  }
-
-};
-
 
 function end() {
   clearInterval(scoreInterval);
-}
+}}

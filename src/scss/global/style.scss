@@ -269,7 +269,7 @@ bottom: 100px;
   height: 150px;
   position: fixed;
   bottom: 18%;
-  right: -2800px;
+  right: -3000px;
   display: inline-block;
 }
 
@@ -281,7 +281,7 @@ bottom: 100px;
   height: 150px;
   position: fixed;
   bottom: 14%;
-  right: -3700px;
+  right: -4000px;
   display: inline-block;
 }
 
@@ -340,7 +340,7 @@ bottom: 100px;
   height: 150px;
   position: fixed;
   top: 8%;
-  right: -7900px;
+  right: -9600px;
 }
 
 .obstacle13 {
@@ -351,7 +351,7 @@ bottom: 100px;
   height: 150px;
   position: fixed;
   top: 8%;
-  right: -10800px;
+  right: -10300px;
 }
 
 .obstacle14 {
@@ -362,7 +362,7 @@ bottom: 100px;
   height: 150px;
   position: fixed;
   top: 23%;
-  right: -10100px;
+  right: -11100px;
 }
 
 .obstacle15 {
@@ -372,185 +372,10 @@ bottom: 100px;
   width: 150px;
   height: 150px;
   position: fixed;
-  top: 8%;
-  right: -12800px;
+  bottom: 18%;
+  right: -11900px;
 }
 
-.obstacle16 {
-  background-image: url('/img/dark-rock_1.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 18%;
-  right: -8000px;
-}
-
-.obstacle17 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 8%;
-  right: -14800px;
-}
-
-.obstacle18 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 8%;
-  right: -15800px;
-}
-
-.obstacle19 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 8%;
-  right: -16800px;
-}
-
-.obstacle20 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 8%;
-  right: -17800px;
-}
-
-.obstacle21 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 8%;
-  right: -18800px;
-}
-
-.obstacle22 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -19800px;
-}
-
-.obstacle23 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -20800px;
-}
-
-.obstacle24 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -21800px;
-}
-
-.obstacle25 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -22800px;
-}
-
-.obstacle26 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -23800px;
-}
-
-.obstacle27 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -24800px;
-}
-
-.obstacle28 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -25800px;
-}
-
-.obstacle29 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -26800px;
-}
-
-.obstacle30 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -27800px;
-}
-
-.obstacle31 {
-  background-image: url(/img/dark-portal.gif);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 8%;
-  right: -28800px;
-}
 
 /* END */
 
@@ -640,3 +465,78 @@ html {
   .cemetary {
     opacity: 0.2;
   }
+
+
+  //credits
+
+  /*Credits*/
+
+.credit__page {
+  font-family: 'arial','Times New Roman', Times, serif;
+}
+
+.ground__credit {
+  position: fixed;
+  bottom: 0vh;
+  left: 0vw;
+  width:100vw;
+  z-index: -6;
+}
+
+.kirby__kiss {
+  position: fixed;
+  right: 40vw;
+  bottom: 20px;
+  transform: scale(0.4);
+}
+
+.congrats {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+
+}
+.credits {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: pink;
+}
+
+.congratulation {
+  font-size: 40px;
+}
+
+.fireworks-1 {
+  position: fixed;
+  left: 55%;
+  top: 20%;
+}
+
+.fireworks-2 {
+  position: fixed;
+  left: 15%;
+  top: 20%;
+}
+
+.fireworks-3 {
+  position: fixed;
+  left: 35%;
+  top: 10%;
+}
+
+.restarter {
+  position: fixed;
+  font-size: 30px;
+  font-weight: bolder;
+  right: 38%;
+  bottom: 1vh;
+}
+
+.link {
+  text-decoration: none;
+  color: pink;
+}
