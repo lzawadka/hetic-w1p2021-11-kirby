@@ -632,6 +632,7 @@ function darkFloor () {
     oxo.elements.onCollisionWithElement(character, obstacle1, function() {
       oxo.screens.loadScreen('end', end);
     });
+    
   }
 
 // obstacle2
