@@ -25,6 +25,7 @@ var negative = 1;
 var charPosY = 600;
 var obstacle3;
 var obstacleInterval;
+var scoreInterval;
 
 /* CLIC PASSAGE AU JEU */
 
@@ -35,11 +36,11 @@ oxo.inputs.listenKeyOnce('enter', function() {
   }
 });
 
-/* oxo.inputs.listenKey('space', function() {
-  if (oxo.screens.getCurrentScreen !== 'home') {
-    oxo.screens.loadScreen('home');
+ oxo.inputs.listenKey('space', function() {
+  if (oxo.screens.getCurrentScreen !== 'game') {
+    window.location.reload();
   }
-});*/
+});
 
 //Appel des fonctions
 
@@ -130,10 +131,11 @@ function game() {
     };
   
   function timeScore() {
-    setInterval(score, 500);
-    };
+    scoreInterval = setInterval(score, 500);
+  };
   
   timeScore();
+
 
 //move of the character
 
@@ -208,11 +210,13 @@ function player() {
 } 
 
 
+
 //GRAVITE INVERSÉ AU PORTAIL
 console.log(character, obstacle3);
 
 oxo.elements.onCollisionWithElement(character, obstacle3, function(){
   if(!darkWorld) {
+    document.body.classList.add('darkWorld');
     const backgroundImg = document.querySelector('.container');
     backgroundImg.style.background = ("url('Dark_background-1280-TWISTER (1).d0facfa1.png')")
     const backgroundFloor= document.querySelector('.ground__pink');
@@ -261,7 +265,7 @@ setInterval(
   function() {
     obstacles3 = document.querySelector('.obstacle3');
 
-    oxo.animation.move(obstacles3, 'left', 20, true);
+    oxo.animation.move(obstacles3, 'left', 25, true);
   }, 
   20 
 );
@@ -626,8 +630,7 @@ function darkFloor () {
     });     
 
     oxo.elements.onCollisionWithElement(character, obstacle1, function() {
-      oxo.screens.loadScreen('end', function() {
-      });
+      oxo.screens.loadScreen('end', end);
     });
   }
 
@@ -639,8 +642,7 @@ function darkFloor () {
     });     
     
     oxo.elements.onCollisionWithElement(character, obstacle2, function() {
-      oxo.screens.loadScreen('end', function() {
-      });
+      oxo.screens.loadScreen('end', end);
     }); 
   }
 
@@ -667,8 +669,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle4, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -680,8 +681,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle5, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -693,8 +693,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle6, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -719,8 +718,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle8, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -732,8 +730,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle9, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -745,8 +742,7 @@ function darkFloor () {
   });     
 
     oxo.elements.onCollisionWithElement(character, obstacle10, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -758,8 +754,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle11, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -771,8 +766,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle12, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -784,8 +778,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle13, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -797,8 +790,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle14, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -810,8 +802,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle15, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -823,8 +814,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle16, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -836,8 +826,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle17, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -849,8 +838,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle18, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -862,8 +850,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle19, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -875,8 +862,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle20, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -888,8 +874,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle21, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -901,8 +886,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle22, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -914,8 +898,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle23, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -927,8 +910,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle24, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -940,8 +922,7 @@ function darkFloor () {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle25, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -953,9 +934,8 @@ function obstacle26() {
 });     
 
   oxo.elements.onCollisionWithElement(character, obstacle26, function() {
-    oxo.screens.loadScreen('end', function() {
+    oxo.screens.loadScreen('end', end);
   });
-});
 }
 
   // obstacle27
@@ -966,8 +946,7 @@ function obstacle26() {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle27, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -979,8 +958,7 @@ function obstacle26() {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle28, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -992,8 +970,7 @@ function obstacle26() {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle29, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -1005,8 +982,7 @@ function obstacle26() {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle30, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
@@ -1018,9 +994,13 @@ function obstacle26() {
   });     
   
     oxo.elements.onCollisionWithElement(character, obstacle31, function() {
-      oxo.screens.loadScreen('end', function() {
-    });
+      oxo.screens.loadScreen('end', end);
   });
   }
 
 };
+
+
+function end() {
+  clearInterval(scoreInterval);
+}

@@ -4,28 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script defer src="../js/libs/oxo.js"></script>
-  <script defer src="../js/script.js"></script>
-  <link rel="stylesheet" href="../scss/global/style.scss">
-  <link rel="stylesheet" href="../scss/styles.scss">
+  <script defer src="/js/libs/oxo.js"></script>
+  <script defer src="/js/script.js"></script>
+  <link rel="stylesheet" href="/scss/styles.scss">
   <title>Kirby Runner - Home</title>
 </head>
 
 <body class="home">
-  <h1>Kirby Runner</h1>
-  <div class="home__picture">
-    <img src="../img/kirby_home.png" alt="Kirby picture"/>
+  <div class="home__title">
+    <img src="/img/Kirby_title.png" alt="Kirby picture"/>
   </div>
-  <h2>Press Enter to Start</h2>
-  <h2>Game instructions :</h2>
+  <h2 class="gameplay__starter">Press Enter to Start</h2>
+  <h2 class="gameplay__title">Game instructions :</h2>
     <div class="gameplay">
       <div class="gameplay__instructions">
-        <p>Press Key "Top Arrow" to jump</p>
+        <p>Press "Top Arrow" Key to Jump</p>
       </div>
-      <div class="gameplay__instructions">
+      <div>
+        <img class="ground-home" src="/img/pink-ground_home(1280).png" alt="ground">
+        <img class= "idle" src="/img/kirby-idle.gif" alt="kirby-iddle">
+        <img class= "homeportal" src="/img/pink-portal.gif" alt="portal">
+      </div>
+  <!-- <div class="gameplay__instructions">
        <p>Press Key "???" to "aspirer les ??"</p>
-      </div>
+      </div>-->
     </div>
-  <h2 class="home__beware">PS : Beware the portals !</h2>
 </body>
 </html>

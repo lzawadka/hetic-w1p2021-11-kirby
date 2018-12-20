@@ -3,65 +3,91 @@
   width: 100vw;
   height: 100vh;
   background: pink;
+  overflow: hidden;
+  background-size: cover auto;
 }
 
-.home__picture {
-  margin-top: 100px;
+.home__title {
+  margin-top: 7vh;
   display: flex;
   justify-content: center;
-}
-
-.home__beware {
-  font-weight: inherit;
-}
-
-h1 {
-  margin-top: 150px;
-  display: flex;
-  justify-content: center;
-  font-family: "Kirby", "Comic Sans MS", Arial, Helvetica, sans-serif;
-  font-size: 80px;
-  font-weight: bold;
-  color: white;
 }
 
 h2 {
-  margin: 20px auto;
+  margin-top: 50px;
   padding: 10px;
-  font-family: "Kirby", "Comic Sans MS", Arial, Helvetica, sans-serif;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
   font-size: 30px;
   color: white;
   text-align: center;
+  font-weight: bold;
 }
 
 p {
-  font-family: "Kirby", "Comic Sans MS", Arial, Helvetica, sans-serif;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: white;
   text-align: center;
 }
 
 .gameplay__title {
-  margin-top: 30px;
+  margin: 10px auto;
 }
 
 .gameplay {
-  margin: 10px 300px;
+  margin: 0px 300px;
   padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: "Kirby", "Comic Sans MS", Arial, Helvetica, sans-serif;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
   font-size: 30px;
   color: white;
 }
 
 .gameplay__instructions {
-  border: 2px solid white;
-  padding: 15px;
-  padding-bottom: 15px;
+  position: absolute;
+  margin-top: 10px;
   font-weight: bold;
 }
+
+
+.gameplay__starter {
+  animation:wobble 1s ease-in-out infinite alternate;
+  margin-top: 10vh;
+}
+  
+  @keyframes wobble {
+    0% {
+        -webkit-transform: scale(1.0);
+    }
+    50% {
+        -webkit-transform: scale(1.5);
+    }
+    100% {
+      -webkit-transform: scale(1.0);
+    }
+  }
+
+.ground-home {
+  position: fixed;
+ bottom: 0vh;
+  left: 0;
+  width: 100vw;
+}
+
+.idle {
+position: fixed;
+left: 50px;
+bottom: 100px;
+}
+
+.homeportal {
+  position: fixed;
+  right: -6vw;
+  bottom: 180px;
+}
+
 
 /* GAME */
 .container__character {
@@ -72,17 +98,9 @@ p {
   bottom: 0%;
   background-image: url('/img/kirby.gif');
 }
-.ground__dark {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  background: url("/img/Kirby_background-1280_TWISTER.png");
-  background-size: cover;
-  -webkit-animation: backgroundScroll 9999999s linear infinite;
-  animation: backgroundScroll 111111s linear infinite; //Adjust timing here according to speed required 
-  position: fixed;
-  display: none;
-}
+
+
+
 
 .ground__dark--is-collided {
   width: 100vw;
@@ -130,6 +148,11 @@ p {
     transform: translateY(-50%);
   }  
 }
+
+/*.darkWorld .ground__dark {
+  background: url('/img/Dark_background-1280-TWISTER.png');
+}*/
+
 
 @-webkit-keyframes backgroundScroll {
   from {background-position: 0 0;}
@@ -203,7 +226,7 @@ p {
 }
 
 .obstacle2 {
-  background-image: url(/img/pink-rock_3.png);
+  background-image: url('/img/pink-rock_3.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
@@ -215,13 +238,13 @@ p {
 }
 
 .obstacle3 {
-  background-image: url(/img/pink-portal.gif);
+  background-image: url('/img/pink-portal.gif');
   background-size: contain;
   width: 150px;
   height: 150px;
   position: fixed;
   bottom: 20%;
-  right: -4000px;
+  right: -5900px;
   margin-top: 5%;
   display: inline-block;
 }
@@ -270,7 +293,7 @@ p {
   height: 150px;
   position: fixed;
   bottom: 13%;
-  right: -4500px;
+  right: -4400px;
   display: inline-block;
 }
 
@@ -286,18 +309,6 @@ p {
   display: inline-block;
 }
 
-.obstacle9 {
-  background-image: url(/img/pink-rock_2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  bottom: 13%;
-  right: -5900px;
-  display: inline-block;
-}
-
 .obstacle10 {
   background-image: url(/img/bat.gif);
   background-size: contain;
@@ -306,7 +317,7 @@ p {
   height: 150px;
   position: fixed;
   top: 24%;
-  right: -6200px;
+  right: -7100px;
   display: inline-block;
 }
 
@@ -318,7 +329,7 @@ p {
   height: 150px;
   position: fixed;
   top: 24%;
-  right: -6700px;
+  right: -8700px;
 }
 
 .obstacle12 {
@@ -329,7 +340,7 @@ p {
   height: 150px;
   position: fixed;
   top: 8%;
-  right: -9800px;
+  right: -7900px;
 }
 
 .obstacle13 {
@@ -350,12 +361,12 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  top: 20%;
+  top: 23%;
   right: -10100px;
 }
 
 .obstacle15 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url('/img/dark-portal.gif');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
@@ -366,14 +377,14 @@ p {
 }
 
 .obstacle16 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url('/img/dark-rock_1.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   position: fixed;
-  top: 8%;
-  right: -13800px;
+  top: 18%;
+  right: -8000px;
 }
 
 .obstacle17 {
@@ -531,7 +542,7 @@ p {
 }
 
 .obstacle31 {
-  background-image: url(/img/pink-rock_2.png);
+  background-image: url(/img/dark-portal.gif);
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;
@@ -541,7 +552,91 @@ p {
   right: -28800px;
 }
 
+/* END */
 
 
+html {
+  width: 100%;
+}
 
-// flip screen
+.end {
+  background-image: url('/img/cemetary.png');
+}
+
+.end__title {
+  margin-top: 280px;
+  display: flex;
+  justify-content: center;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: red;
+}
+
+.end__restart {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Cinzel", 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: red;
+  text-align: center;
+}
+
+.score__data--end {
+    margin: 20px auto;
+    padding: 10px;
+    font-family: "Cinzel", 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+  }
+
+  .sad_kirby {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    height: auto;
+    width: 20%;
+  }
+  
+  .fadein {
+    opacity: 0;
+    animation: fadein 4s linear 2.5s;
+    animation-fill-mode: forwards;
+  
+  }
+    @keyframes fadein {
+     from {
+        opacity:0;
+    }
+      to {
+        opacity:1;
+      }
+  
+  }
+  
+  .kirbysplash {
+  position: absolute;
+  top:20%;
+  left: 40%;
+  animation: fadeout 2.5s ease-out 3s;
+  animation-fill-mode: forwards;
+  }
+  @keyframes fadeout {
+    from {
+       opacity:1;
+   }
+     to {
+       opacity:0;
+     }
+  }
+  
+  
+  .link {
+    color: #FF8000;
+    text-decoration: none;
+  }
+  
+  .cemetary {
+    opacity: 0.2;
+  }
