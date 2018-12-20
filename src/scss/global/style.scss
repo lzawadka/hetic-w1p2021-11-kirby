@@ -68,52 +68,138 @@ p {
   height: 100px;
   width: 100px;
   transition: 0.5s;
+  z-index: 10;
+  bottom: 0%;
+  background-image: url('/img/kirby.gif');
 }
 .ground__dark {
   width: 100vw;
   height: 100vh;
   top: 0;
-  background: url(/img/Dark_background-1280-simple.jpg);
+  background: url("/img/Kirby_background-1280_TWISTER.png");
   background-size: cover;
   -webkit-animation: backgroundScroll 9999999s linear infinite;
-  animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
-  position:fixed;
-  z-index: -9;
+  animation: backgroundScroll 111111s linear infinite; //Adjust timing here according to speed required 
+  position: fixed;
   display: none;
 }
 
 .ground__dark--is-collided {
   width: 100vw;
-  height: 100vh;
+  height: 150px;
   top: 0;
-  background: url(/img/dark-ground.png);
+  background: url("/img/dark-ground.png");
   background-size: cover;
   -webkit-animation: backgroundScroll 9999999s linear infinite;
-  animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
+  animation: backgroundScroll 111111s linear infinite;  // Adjust timing here according to speed required 
   position:fixed;
-  z-index: 9;
 }
 
 
 .ground__pink {
   width: 100vw;
   height: 100vh;
-  text-align:center;
-  background: url('/img/pink-ground\(1280\)\ \(1\).png');
+  text-align: center;
+  background: url('/img/pink-ground.png');
   background-size: 160vh;
   -webkit-animation: backgroundScroll 9999999s linear infinite;
-  animation: backgroundScroll 111111s linear infinite; /* Adjust timing here according to speed required */
+  animation: backgroundScroll 111119s linear infinite; // Adjust timing here according to speed required 
   position:fixed;
 }
 
+
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  text-align:center;
+  background: url('/img/Kirby_background-1280_TWISTER.png');
+  background-size: cover;
+  background-color: #ffadec;
+  -webkit-animation: backgroundScroll 9999999s linear infinite;
+  animation: backgroundScroll 999999s linear infinite; /* Adjust timing here according to speed required */
+  position: absolute;
+  z-index: -1;
+
+  &img:nth-of-type(1) {
+    position:absolute;
+    width:20vw;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }  
+}
+
+@-webkit-keyframes backgroundScroll {
+  from {background-position: 0 0;}
+  to {background-position: -99999999px 0;}
+}
+
+@keyframes backgroundScroll {
+  from {background-position: 0 0;}
+  to {background-position: -99999999px 0;}
+}
+
+/* flip screen */
+
+.flip__state--second {
+  top:  15%;
+  position: absolute;
+  -moz-transform: scale(1,-1);
+  -o-transform: scale(1,-1);
+  -webkit-transform: scale(1,-1);
+  transform:rotateX(180deg);
+  z-index: 2;
+  height: 10em;
+  width: 10em;
+}
+
+.background__state--second {
+  position: absolute;
+  transform: rotateX(180deg); 
+  z-index: -5;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .obstacle1 {
   background-image: url(/img/pink-crystal_1.png) ;
   background-size: contain;
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 10%;
-  right: -10px;
+  bottom: 20%;
+  right: -100px;
+  display: inline-block;
+}
+
+.score__title {
+  float: left;
+  margin-top: 30%;
+  margin-left : 10px;
+  width: 200px;
+  height: 70px;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  z-index: 9999999;
+  opacity: 0.5;
+}
+
+.score__data {
+  float: left;
+  margin-top: 30%;
+  margin-left : 20px;
+  width: 100px;
+  height: 70px;
+  font-family: "Kirby", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white; 
+  z-index: 9999999;
+  opacity: 0.5;
 }
 
 .obstacle2 {
@@ -123,18 +209,21 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 6%;
+  bottom: 16%;
   right: -1000px;
+  display: inline-block;
 }
 
 .obstacle3 {
   background-image: url(/img/pink-portal.gif);
   background-size: contain;
-  width: 600px;
-  height: 600px;
+  width: 150px;
+  height: 150px;
   position: fixed;
-  bottom: 13%;
-  right: -8200px;
+  bottom: 20%;
+  right: -10000px;
+  margin-top: 5%;
+  display: inline-block;
 }
 
 .obstacle4 {
@@ -146,6 +235,7 @@ p {
   position: fixed;
   bottom: 10%;
   right: -2000px;
+  display: inline-block;
 }
 
 .obstacle5 {
@@ -155,8 +245,9 @@ p {
   width: 150px;
   height: 150px;
   position: fixed;
-  bottom: 8%;
+  top: 18%;
   right: -2800px;
+  display: inline-block;
 }
 
 .obstacle6 {
@@ -167,7 +258,7 @@ p {
   height: 150px;
   position: fixed;
   bottom: 10%;
-  right: -3800px;
+  right: -3700px;
 }
 
 .obstacle7 {
@@ -178,7 +269,7 @@ p {
   height: 150px;
   position: fixed;
   bottom: 8%;
-  right: -4800px;
+  right: -4500px;
 }
 
 .obstacle8 {
@@ -189,7 +280,7 @@ p {
   height: 150px;
   position: fixed;
   bottom: 12%;
-  right: -5800px;
+  right: -5200px;
 }
 
 .obstacle9 {
@@ -200,64 +291,252 @@ p {
   height: 150px;
   position: fixed;
   bottom: 8%;
-  right: -6800px;
+  right: -5900px;
 }
 
-.container {
-width: 100vw;
-height: 100vh;
-text-align:center;
-background: url('/img/Kirby_background-1280_TWISTER.png');
-background-size: cover;
-background-color: #ffadec;
--webkit-animation: backgroundScroll 9999999s linear infinite;
-animation: backgroundScroll 999999s linear infinite; /* Adjust timing here according to speed required */
-position: absolute;
-z-index: -1;
-
-  &img:nth-of-type(1){
-    position:absolute;
-    width:20vw;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    
-  }  
+.obstacle10 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -6700px;
 }
 
-@-webkit-keyframes backgroundScroll {
-from {background-position: 0 0;}
-to {background-position: -99999999px 0;}
+.obstacle11 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -8800px;
 }
 
-@keyframes backgroundScroll {
-from {background-position: 0 0;}
-to {background-position: -99999999px 0;}
+.obstacle12 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -9800px;
 }
 
-/* flip screen */
-
-.flip__state--second {
-  top:  15%;
-  position: absolute;
-  -moz-transform: scale(1,-1);
-  -o-transform: scale(1,-1);
-  -webkit-transform: scale(1,-1);
- transform:rotateX(180deg);
- z-index: 2;
- height: 10em;
- width: 10em;
+.obstacle13 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -10800px;
 }
 
-.background__state--second {
-  position: absolute;
-  transform: rotateX(180deg); 
-  z-index: -5;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+.obstacle14 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -11800px;
 }
+
+.obstacle15 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -12800px;
+}
+
+.obstacle16 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -13800px;
+}
+
+.obstacle17 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -14800px;
+}
+
+.obstacle18 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -15800px;
+}
+
+.obstacle19 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -16800px;
+}
+
+.obstacle20 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -17800px;
+}
+
+.obstacle21 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -18800px;
+}
+
+.obstacle22 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -19800px;
+}
+
+.obstacle23 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -20800px;
+}
+
+.obstacle24 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -21800px;
+}
+
+.obstacle25 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -22800px;
+}
+
+.obstacle26 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -23800px;
+}
+
+.obstacle27 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -24800px;
+}
+
+.obstacle28 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -25800px;
+}
+
+.obstacle29 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -26800px;
+}
+
+.obstacle30 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -27800px;
+}
+
+.obstacle31 {
+  background-image: url(/img/pink-rock_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 8%;
+  right: -28800px;
+}
+
+
 
 
 // flip screen
