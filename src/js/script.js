@@ -5,7 +5,7 @@ var floor;
 var speed = 100;
 var characterPosition;
 var size = 300;
-var gravity = 5;  //Speed of falling
+var gravity = 10;  //Speed of falling
 var time;
 var flying = true;
 var chutInterval;
@@ -73,10 +73,10 @@ function game() {
   ground5 = document.getElementsByClassName('obstacle5');
   obstacle6();
   ground6 = document.getElementsByClassName('obstacle6');
-  obstacle7();
+  /*obstacle7();
   ground7 = document.getElementsByClassName('obstacle7');
   obstacle8();
-  ground8 = document.getElementsByClassName('obstacle8');
+  ground8 = document.getElementsByClassName('obstacle8');*/
   obstacle9();
   ground9 = document.getElementsByClassName('obstacle9');
   obstacle10();
@@ -223,7 +223,7 @@ setInterval(
   function() {
     var obstacles2 = document.querySelector('.obstacle2');
 
-    oxo.animation.move(obstacles2, 'left', 25, true);
+    oxo.animation.move(obstacles2, 'left', 15, true);
   }, 
   20
 );  
@@ -234,7 +234,7 @@ setInterval(
   function() {
     obstacles3 = document.querySelector('.obstacle3');
 
-    oxo.animation.move(obstacles3, 'left', 25, true);
+    oxo.animation.move(obstacles3, 'left', 15, true);
   }, 
   20 
 );
@@ -245,7 +245,7 @@ setInterval(
   function() {
     var obstacles4 = document.querySelector('.obstacle4');
 
-    oxo.animation.move(obstacles4, 'left', 25, true);
+    oxo.animation.move(obstacles4, 'left', 15, true);
   }, 
   20 
 );
@@ -256,7 +256,7 @@ setInterval(
   function() {
     var obstacles5 = document.querySelector('.obstacle5');
 
-    oxo.animation.move(obstacles5, 'left', 25, true);
+    oxo.animation.move(obstacles5, 'left', 15, true);
   }, 
   20 
 );
@@ -267,7 +267,7 @@ setInterval(
   function() {
     var obstacles6 = document.querySelector('.obstacle6');
 
-    oxo.animation.move(obstacles6, 'left', 25, true);
+    oxo.animation.move(obstacles6, 'left', 15, true);
   }, 
   20 
 );
@@ -278,7 +278,7 @@ setInterval(
   function() {
     var obstacles7 = document.querySelector('.obstacle7');
 
-    oxo.animation.move(obstacles7, 'left', 25, true);
+    oxo.animation.move(obstacles7, 'left', 15, true);
   }, 
   20 
 );
@@ -289,7 +289,7 @@ setInterval(
   function() {
     var obstacles8 = document.querySelector('.obstacle8');
 
-    oxo.animation.move(obstacles8, 'left', 25, true);
+    oxo.animation.move(obstacles8, 'left', 15, true);
   }, 
   20 
 );
@@ -300,7 +300,7 @@ setInterval(
   function() {
     var obstacles9 = document.querySelector('.obstacle9');
 
-    oxo.animation.move(obstacles9, 'left', 25, true);
+    oxo.animation.move(obstacles9, 'left', 15, true);
   }, 
   20 
 );
@@ -311,7 +311,7 @@ setInterval(
   function() {
     var obstacles10 = document.querySelector('.obstacle10');
 
-    oxo.animation.move(obstacles10, 'left', 25, true);
+    oxo.animation.move(obstacles10, 'left', 15, true);
   }, 
   20 
 );
@@ -322,7 +322,7 @@ setInterval(
   function() {
     var obstacles11 = document.querySelector('.obstacle11');
 
-    oxo.animation.move(obstacles11, 'left', 25, true);
+    oxo.animation.move(obstacles11, 'left', 15, true);
   }, 
   20 
 );
@@ -333,7 +333,7 @@ setInterval(
   function() {
     var obstacles12 = document.querySelector('.obstacle12');
 
-    oxo.animation.move(obstacles12, 'left', 25, true);
+    oxo.animation.move(obstacles12, 'left', 15, true);
   }, 
   20 
 );
@@ -344,7 +344,7 @@ setInterval(
   function() {
     var obstacles13 = document.querySelector('.obstacle13');
 
-    oxo.animation.move(obstacles13, 'left', 25, true);
+    oxo.animation.move(obstacles13, 'left', 15, true);
   }, 
   20 
 );
@@ -355,7 +355,7 @@ setInterval(
   function() {
     var obstacles14 = document.querySelector('.obstacle14');
 
-    oxo.animation.move(obstacles14, 'left', 25, true);
+    oxo.animation.move(obstacles14, 'left', 15, true);
   }, 
   20 
 );
@@ -366,7 +366,7 @@ setInterval(
   function() {
     var obstacles15 = document.querySelector('.obstacle15');
 
-    oxo.animation.move(obstacles15, 'left', 25, true);
+    oxo.animation.move(obstacles15, 'left', 15, true);
   }, 
   20 
 );
